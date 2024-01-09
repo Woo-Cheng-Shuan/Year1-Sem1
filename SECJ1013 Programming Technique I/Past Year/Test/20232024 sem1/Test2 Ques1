@@ -1,0 +1,80 @@
+////////////////////// Test 2, 2023/2024 (Sem 1) //////////////////////
+//// QUESTION 1
+//// Name: WOO CHENG SHUAN
+//// Matric No: A23CS0283
+//// Date / Day: 1/4/2023
+///////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+// function prototypes
+float price_original();
+char choose_Option();
+void price_afterTax(float&, char);      //error 1
+
+// start main function
+int main() 
+{
+    float price = 0; // should > 0
+    char option; // A -> Encyclopedia
+                  // B -> Textbook
+                  // C -> Novel
+                  // D -> Magazine
+	option = choose_Option();          //error 2
+    price = price_original();          //error 3
+    cout << "Original book price before tax = RM " << price << "\n\n";
+    price_afterTax(price, option);
+    cout << "Total book price after tax = RM " << price << '\n';     
+    return 0;
+}
+
+
+// start new user-defined functions
+float price_original()                //error 4
+{ 
+    float bookPrice;   				  //error 5
+    do								  //error 6
+	{ 
+        cout << "Please insert the book price (RM): ";
+        cin >> bookPrice;
+    }while (bookPrice <= 0); 
+    return bookPrice;
+}
+
+char choose_Option() 				 //error 7
+{ 
+    char category; 
+    do 
+	{
+        cout << "Please choose the book category: \n";
+        cout << "A -> Encyclopedia\n";
+        cout << "B -> Textbook\n";
+        cout << "C -> Novel\n";
+        cout << "D -> Magazine\n";
+        cout << "Book category (A,B,C,D): ";
+        cin >> category;
+        cout << "\n";
+    } while (category != 'A' && category != 'B' && category != 'C' && category != 'D');     //error 8
+    return category;
+}
+
+// tax is based on book categories as follows:
+// A -> Encyclopedia => 3%
+// B -> Textbook => 2%
+// C -> Novel => 1%
+// D -> Magazine => 0.5%
+void price_afterTax(float& bookPrice, char category)      //error 9
+{ 
+    float tax = 0;
+    switch (category) 
+	{
+        case 'A': tax = bookPrice *  3 / 100; break; 	  //error 10
+        case 'B': tax = bookPrice * 2 / 100; break; 
+        case 'C': tax = bookPrice * 1 / 100; break;
+		case 'D': tax = bookPrice * 0.5 / 100;
+    }
+    cout << "Tax price = RM " << tax << "\n";
+    bookPrice += tax;
+}
