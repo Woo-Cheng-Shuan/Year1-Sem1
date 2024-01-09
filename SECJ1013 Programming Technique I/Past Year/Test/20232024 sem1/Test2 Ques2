@@ -1,0 +1,97 @@
+////////////////////// Test 2, 2023/2024 (Sem 1) //////////////////////
+//// QUESTION 2
+//// Name: WOO CHENG SHUAN
+//// Matric No: A23CS0283
+//// Date / Day: 1/4/2023
+///////////////////////////////////////////////////////////////////////
+
+// Task 7. Directives, library, header, etc.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+// Task 6. Function prototypes
+double calculateLateFees();
+void displayMenu();
+void displayLibraryInfo();
+int getUserInput();
+
+// Task 5. Main function
+int main(){
+	int choice;
+	double lateFee;
+	
+	do{
+		do{
+			cout<<"************ Library Book Checkout System ************"<<endl;
+	
+			displayMenu();
+	
+			choice = getUserInput();
+			
+			if(choice != 1 && choice != 2 && choice != 3)
+				cout<<"Invalid choice. Please enter a number between 1 and 3."<<endl;
+		
+		}while(choice != 1 && choice != 2 && choice != 3);
+
+		if(choice==1){
+//			lateFee = calculateLateFees();
+			cout<<"Late fees: RM"<<fixed<<showpoint<<setprecision(2)<<calculateLateFees();
+		}
+		else if(choice==2){
+			displayLibraryInfo();
+		}
+		else if(choice==3){
+			cout<<"Exiting the program. Thank you!";
+			break;
+		}
+		
+		cout<<"\n";
+	}while(choice == 1 || choice == 2);
+}
+
+// Task 1. Function calculateLateFees  
+double calculateLateFees(){
+	double lateFee;
+	int numDay,dayRemain;
+	
+	cout<<"Enter the number of days the book is overdue: ";
+	cin>>numDay;
+	
+	if(numDay>14){
+		lateFee = (0.5*7) + (1*7) + (2*(numDay-14));
+	}
+	else if(numDay>7){
+		lateFee = (0.5*7) + (1*(numDay-7));
+	}
+	else{
+		lateFee = 0.5*numDay;
+	}
+		
+	return lateFee;
+}
+
+// Task 2. Function displayMenu 
+void displayMenu(){
+	cout<<"1. Calculate Late Fees"<<endl;
+	cout<<"2. Display Library Information"<<endl;
+	cout<<"3. Quit"<<endl;
+}
+
+// Task 3. Function displayLibraryInfo 
+void displayLibraryInfo(){
+	cout<<"************ Library Information ************"<<endl;
+	cout<<"Library Name: UTM Library"<<endl;
+	cout<<"Address: Skudai, Johor"<<endl;
+	cout<<"Contact: (123) 456 7890";
+}
+
+// Task 4. Function getUserInput with reference parameter
+int getUserInput(){
+	int choice;
+	
+	cout<<"Enter your choice (1-3): ";
+	cin>>choice;
+	
+	return choice;
+}
