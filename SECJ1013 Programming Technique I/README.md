@@ -1,1 +1,3 @@
+<h2> Reflection based on this course
 
+<h3> This course has provided me with a comprehensive understanding of problem-solving techniques and hands-on experience in using structured approaches. I have gained proficiency in developing programs using the C++ programming language to solve problems ranging from simple to moderate complexity. The industry talks and visits were incredibly motivating and insightful, offering a glimpse into the professional world and providing the opportunity to learn from accomplished industry experts. These sessions were instrumental in helping me gain insight into the requirements and job specifications necessary for a successful career in the IT industry.
