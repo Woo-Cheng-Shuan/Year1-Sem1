@@ -1,0 +1,100 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+
+void readFile(double valueF[]){					
+	
+	ifstream infile("input.txt");
+		
+	if (!infile)
+		cout<<"Fail to open input file";					
+		
+	for (int a=1; a<9; a++){
+		infile >> valueF[a];	
+	}
+	
+	infile.close();
+}
+
+void computeC(const double valueF[], double valueC[]){								
+	for (int a=1; a<9; a++)
+		valueC[a] = 5.0 / 9.0 * (valueF[a] - 32);				//must put .0
+}
+
+double average(const double valueF[], const double valueC[], double sum, double& avrg){
+	for (int a=1; a<9; a++)
+		sum += valueC[a];
+	
+	avrg = sum / 8.0;
+	
+	cout<<"Average of the temperature in Celcius: "<<fixed<<setprecision(1)<<avrg<<endl;
+	
+	return avrg;
+}
+
+char grade(const double valueC[],int a){
+	if (valueC[a]>=35)
+		return 'H';
+	
+	else if (valueC[a]>=20)
+		return 'M';
+		
+	else 
+		return 'L';
+}
+
+void writeFile(const double valueF[], const double valueC[],char desc){
+	int HTemp=0;
+	int MTemp=0;
+	int LTemp=0;
+	
+	fstream outfile("output.txt",ios::out);
+	
+	if(!outfile)
+		cout<<"Fail to open output file";
+		
+	outfile<<left;
+	outfile<<"\t"<<setw(15)<<"C(Celcius)"<<setw(20)<<"F(Farenheit)"<<"Description"<<endl;
+	outfile<<"\t"<<setw(15)<<"=========="<<setw(20)<<"============"<<"==========="<<endl;
+	
+	for (int a=1; a<9; a++){
+		desc = grade(valueC,a);
+		outfile<<left;
+		outfile<<"\t  "<<setw(15)<<fixed<<setprecision(2)<<valueC[a]<<setw(22)<<valueF[a]<<desc<<endl;
+		
+		if (desc=='H')
+			HTemp += 1;
+		else if (desc == 'M')
+			MTemp += 1;
+		else
+			LTemp += 1;
+	}
+	
+	cout<<"Number of high temperature: "<<HTemp<<endl;
+	cout<<"Number of medium temperature: "<<MTemp<<endl;
+	cout<<"Number of low temperature: "<<LTemp;
+	
+	outfile.close();
+}
+
+int main(){
+	double valueF[10];
+	double valueC[10];
+	double sum,avrg;
+	char desc;
+	int a;
+	
+	readFile(valueF);
+	
+	computeC(valueF,valueC);
+	
+	average(valueF,valueC,sum,avrg);
+	
+	grade(valueC,a);
+	
+	writeFile(valueF,valueC,desc);
+	
+	return 0;
+}
