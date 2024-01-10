@@ -18,5 +18,5 @@ Besides, I think this design thinking project let me know how the process is to 
 Not only that, but I will attend some extra course to improve my IT knowledge and skills. This is because we will do many hands-on projects which is tougher than this. “Never stop learning”, a quote from Mr Ninderjit that I heard from the industry visit.  
  
 
-[Image Alt text](https://github.com/Woo-Cheng-Shuan/Year1-Sem1/blob/main/SECP1513%20Technology%20and%20Information%20System/Assignment/Design%20Thinking/images/Interview%20-%20Dr.%20Eiliyah.png?raw=true "Interview - Dr.Eiliyah")
+![Image Alt text](https://github.com/Woo-Cheng-Shuan/Year1-Sem1/blob/main/SECP1513%20Technology%20and%20Information%20System/Assignment/Design%20Thinking/images/Interview%20-%20Dr.%20Eiliyah.png?raw=true "Interview - Dr.Eiliyah")
   
