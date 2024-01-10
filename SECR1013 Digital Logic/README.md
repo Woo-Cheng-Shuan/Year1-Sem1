@@ -1,1 +1,3 @@
+<h2> Reflection based on the overall course
 
+<h3> Digital electronics is the fundamental basis of microprocessor-based systems, including computers, robots, automobiles, and industrial control systems. This course introduced digital electronics, providing an extensive overview of essential concepts, components, and tools. The curriculum offers me a comprehensive understanding of digital fundamentals, ranging from fundamental concepts to programmable logic devices. Through laboratory experiments, I gained hands-on experience with simulator software, devices, and circuits, which are studied in the classroom.
