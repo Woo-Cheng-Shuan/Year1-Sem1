@@ -14,6 +14,8 @@ Besides, I think this design thinking project let me know how the process is to 
 
 <h3> c. What is the action/ improvement/ plan necessary for you to improve your potential in this industry. 
 
+
+[Image Alt text](https://github.com/Woo-Cheng-Shuan/Year1-Sem1/blob/main/SECP1513%20Technology%20and%20Information%20System/Assignment/Design%20Thinking/images/Interview%20-%20Dr.%20Eiliyah.png?raw=true "Interview - Dr.Eiliyah")
   
 Not only that, but I will attend some extra course to improve my IT knowledge and skills. This is because we will do many hands-on projects which is tougher than this. “Never stop learning”, a quote from Mr Ninderjit that I heard from the industry visit.  
  
